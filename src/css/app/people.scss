@@ -1,0 +1,18 @@
+.btnPeople{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin: 5px 15px;
+
+    &__field{
+        margin: 10px;
+        div{
+            border: 1px solid #eee;
+            background-color: #eee;
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}
