@@ -1,4 +1,5 @@
 import React from 'react'
+import Navigation from './Navigation';
 
 export default class Dotted extends React.Component{
 
@@ -9,8 +10,6 @@ export default class Dotted extends React.Component{
             status:"active",
             isActive:true
         }
-
-       
 
         
     }
@@ -28,7 +27,7 @@ export default class Dotted extends React.Component{
             this.setState({
                 status:'active',
                 isActive:true
-            })
+            });
         }
     }
 
@@ -41,6 +40,10 @@ export default class Dotted extends React.Component{
                 title:'t3'
             }
         ]
+
+        const tabs = [
+            "t1","t2","t3"
+        ]
         return(
             // <div>
             //     <div class="calc__ping" id="ping" data-tabs='1' onClick={(e)=>{this.eventState(e)}} className={this.state.status}>1</div>
@@ -48,14 +51,12 @@ export default class Dotted extends React.Component{
             //     <div class="calc__ping" id="ping" data-tabs='3' onClick={(e)=>{this.eventState(e)}} className={this.state.status}>3</div>
             // </div>
 
+
+
             <div id="calc__container" class="calc__container">
             <div id="calc__navig" class="calc__navig">
                
-                <div class="calc__ping" id="ping"> {
-                    this.tabData.map((item, index)=>{
-                        <div class="calc__ping" id="ping">{item}</div>
-                    })
-                }</div>
+               <Navigation title={tabs}/>
                 
             </div>
 
