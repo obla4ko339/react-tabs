@@ -1,28 +1,37 @@
 import React from 'react'
 import People from './People'
 
+function Peoples(props){
+    return (
+        <div>
+            <h1>{props.title}</h1>
+        </div>
+    )
+}
+
+
 export default class Navigation extends React.Component{
 
 
     constructor(props){
         super(props)
+
+        this.state = {
+            display:"1"
+        }
     }
 
     handlerClick(e){
        
         const tab_id = e.currentTarget.getAttribute('data-tab-id');
-        return tab_id;
+        console.log(this.state.display)
+        this.setState({
+            display:tab_id
+        })
+
     }
 
-    targetTab(tabId=1){
-        if(tabId == 1){
-            console.log(tabId+" TAb")
-            return <People/>
-        }else if(tabId == 2){
-            console.log(tabId+" TAb")
-        }
-    }
-
+ 
     render(){
         return(
             <div>
@@ -32,12 +41,7 @@ export default class Navigation extends React.Component{
                     )
                 }
 
-                <div>
-                    {
-                        this.targetTab(2)
-                        
-                    }
-                </div>
+                <Peoples title={this.state.display}/>
             </div>
         )
     }
