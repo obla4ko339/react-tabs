@@ -26,7 +26,7 @@ export default class Dotted extends React.Component{
         }else if(this.state.isActive === false){
             this.setState({
                 status:'active',
-                isActive:true
+                isActive:true   
             });
         }
     }
